@@ -11,8 +11,28 @@
     </head>
 
     <body>
-        <div class="container">
-            
+
+        <div class="row justify-content-center mt-4">
+            <div class="col-2">
+                <img class="img-fluid" src="../Public/img/logo.png"/>
+            </div>
+        </div>
+        <div class="container col-4 bg-light mt-4 p-3 rounded">
+            <div class="row justify-content-center">
+                <div class="col-4 text-center mt-2">Welcome to Teabuds!</div>
+            </div>
+
+            <form class="mt-3">
+                <div class="form-group">
+                    <label for="inputEmail">Email address</label>
+                    <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword">Password</label>
+                    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                </div>
+
+            </form>
         </div>
     </body>
 

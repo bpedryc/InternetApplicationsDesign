@@ -3,4 +3,10 @@ html {
 }
 body {
     background: linear-gradient(35deg, #03200A, #22914B);
+    font-family: 'Roboto', serif;
+}
+
+.logo {
+
+    height: 4em;
 }
