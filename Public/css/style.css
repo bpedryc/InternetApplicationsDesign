@@ -1,12 +1,15 @@
 html {
     height: 100%;
 }
+
 body {
+    height: 100%;
     background: linear-gradient(35deg, #03200A, #22914B);
     font-family: 'Roboto', serif;
+    color: black;
 }
 
-.logo {
-
-    height: 4em;
+.container {
+    height: 100%;
 }
+
