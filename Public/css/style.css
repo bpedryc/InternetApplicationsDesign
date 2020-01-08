@@ -17,9 +17,50 @@ body {
 .container {
     height: inherit;
     max-width: unset;
-    display: flex;
+    /*display: flex;
+    flex-direction: row;*/
     margin: 0;
     justify-content: center;
     align-items: center;
+}
 
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+input {
+    padding-left: 0.5em !important;
+    margin: 0 1em 1em 1em !important;
+    background: #FFFFFF 0 0 no-repeat padding-box !important;
+    border: 2px solid #01572F !important;
+    border-radius: 2em !important;
+    outline: none !important;
+
+    font-size: 1em !important;
+    line-height: 2.5em !important;
+}
+
+button {
+    margin: 0 1em 1em 1em;
+    color: white;
+    background: #017840 0 0 no-repeat padding-box;
+    box-shadow: 0 3px 6px #00000029;
+    border-radius: 2em;
+    border: none;
+
+    font-size: 1em;
+    line-height: 2.5em;
+}
+
+button:hover {
+    background-color: #1a7c45;
+    color: white;
+    text-decoration: none;
+}
+
+button:focus {
+    background-color: #01572F;
+    outline: none;
 }

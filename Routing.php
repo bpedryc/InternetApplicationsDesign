@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__.'\Controllers\SecurityController.php';
+require_once __DIR__.'\Controllers\RegistrationController.php';
 
 class Routing
 {
@@ -12,6 +13,14 @@ class Routing
             'login' => [
                 'controller' => 'SecurityController',
                 'action' => 'login'
+            ],
+            'registration' => [
+                'controller' => 'RegistrationController',
+                'action' => 'getRegistrationForm'
+            ],
+            'register' => [
+                'controller' => 'RegistrationController',
+                'action' => 'register'
             ],
             'profile' => [
                 'controller' => 'ProfileController',

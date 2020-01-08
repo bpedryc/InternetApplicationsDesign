@@ -12,14 +12,37 @@
     </head>
 
     <body>
-        <div class="container">
-            <div class="row justify-content-center align-items-center text-center">
-                <div class="col-6">
+        <div class="container row">
+            <div class="logo col-12 col-md-5 col-md-offset-1">
+                <img src="Public/img/logo.png" class="img-fluid">
+            </div>
+            <div class="col-8 col-md-5">
+                <div class="forms">
+                    <h1>TEABUDS</h1>
+                    <form action="?page=login" method="post">
+                        <input name="email" type="text" placeholder="email@email.com">
+                        <input name="password" type="password" placeholder="password">
+                        <button type="submit">LOGIN</button>
+                    </form>
+
+                    <form action="?page=registration" method="post">
+                        <button type="submit">REGISTER</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+
+
+<!--            <div class="row justify-content-center align-items-center text-center">
+                <div class="logo col-12 col-md-6">
                     <img class="img-fluid" src="Public/img/leaf_01.png">
                 </div>
-                <div class="col-6">
-                    <h1 class="title">TEABUDS</h1>
-                    <form action="" class="">
+                <div class="content col-12 col-md-6">
+                    <h1>TEABUDS</h1>
+                    <form action="?page=login" method="post">
                         <div class="form-group">
                             <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
                             <div class="valid-feedback">Valid.</div>
@@ -32,12 +55,9 @@
                         </div>
                         <button type="submit" class="login btn btn-primary">LOGIN</button>
                     </form>
-                    <div class="register-group">
+                    <form action="?page=register" class="register-group">
                         <p>Don't have an account yet?</p>
                         <button type="submit" class="register btn btn-primary">REGISTER</button>
-                    </div>
+                    </form>
                 </div>
-            </div>
-        </div>
-    </body>
-</html>
+            </div>-->

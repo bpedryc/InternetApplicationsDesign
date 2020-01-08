@@ -1,58 +1,38 @@
-.title {
-    margin: 0.4em 0;
-    font-size: 4em;
+img {
+    display: block;
+    margin: auto;
+}
+
+.messages {
+    color: white;
+    text-align: center;
+    margin-bottom: 0.4em;
+}
+
+.forms {
+    width: 80%;
+    margin: auto;
+}
+
+.forms > h1 {
+    margin-bottom: 0.4em;
+    text-align: center;
+    font-size: 3.5em;
     color: white;
 }
 
-@media (max-width: 991px) {
-    .title {
-        font-size: 3em !important;
+@media (max-width: 1199px){
+    .forms {
+        width: 100%;
+    }
+
+    .forms > h1 {
+        font-size: 2.5em;
     }
 }
 
-.form-group {
-    text-align: left;
-    margin-bottom: 1.6em;
-}
-
-.form-group > input{
-    border-radius: 12px !important;
-    border: none !important;
-    padding: 1.4em;
-}
-
-.form-group > input:focus {
-    border: none !important;
-    box-shadow: 0 0 0 .2rem rgb(5, 66, 21) !important;
-}
-
-button {
-    border-radius: 12px !important;
-    border: none !important;
-    background: #22914B !important;
-}
-
-button:hover {
-    background-color: #1a7c45 !important;
-}
-
-button:focus {
-    border-color: #03200A !important;
-    box-shadow: 0 0 0 .2rem rgb(5, 66, 21) !important;
-}
-
-button.login {
-    padding: 0.6em 4em !important;
-    margin: 0.4em 0 1.6em 0;
-}
-
-.register-group > p {
-    font-size: 0.9em;
-    margin-bottom: 0.3em;
-    opacity: 0.5;
-}
-
-button.register {
-    font-size: 0.9em;
-    padding: 0.3em 1.6em !important;
+@media (max-width: 767px) {
+    .forms > h1 {
+        font-size: 2em;
+    }
 }
