@@ -1,7 +1,8 @@
 <?php
 
-require_once __DIR__.'\Controllers\SecurityController.php';
-require_once __DIR__.'\Controllers\RegistrationController.php';
+require_once 'Controllers/SecurityController.php';
+require_once 'Controllers/RegistrationController.php';
+require_once 'Controllers/ProfileController.php';
 
 class Routing
 {

@@ -20,12 +20,21 @@
                 <div class="forms">
                     <h1>TEABUDS</h1>
                     <form action="?page=login" method="post">
+                        <div class="messages">
+                            <?php
+                            if(isset($messages)){
+                                foreach($messages as $message) {
+                                    echo $message;
+                                }
+                            }
+                            ?>
+                        </div>
                         <input name="email" type="text" placeholder="email@email.com">
                         <input name="password" type="password" placeholder="password">
                         <button type="submit">LOGIN</button>
                     </form>
 
-                    <form action="?page=registration" method="post">
+                    <form action="?page=registration" method="get">
                         <button type="submit">REGISTER</button>
                     </form>
                 </div>

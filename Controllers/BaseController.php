@@ -7,6 +7,7 @@ class BaseController
 
     public function __construct()
     {
+        session_start();
         $this->request = $_SERVER['REQUEST_METHOD'];
     }
 
@@ -23,7 +24,7 @@ class BaseController
     protected function render(string $template = null, array $variables = [])
     {
         $templatePath = $template ? dirname(__DIR__).'\Views\\'.$template.'.php' : '';
-        $output = $templatePath;#'File not found';
+        $output = 'File not found';
 
         if (file_exists($templatePath)){
             extract($variables);

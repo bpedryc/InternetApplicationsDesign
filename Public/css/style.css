@@ -17,8 +17,6 @@ body {
 .container {
     height: inherit;
     max-width: unset;
-    /*display: flex;
-    flex-direction: row;*/
     margin: 0;
     justify-content: center;
     align-items: center;
@@ -30,17 +28,6 @@ form {
     justify-content: center;
 }
 
-input {
-    padding-left: 0.5em !important;
-    margin: 0 1em 1em 1em !important;
-    background: #FFFFFF 0 0 no-repeat padding-box !important;
-    border: 2px solid #01572F !important;
-    border-radius: 2em !important;
-    outline: none !important;
-
-    font-size: 1em !important;
-    line-height: 2.5em !important;
-}
 
 button {
     margin: 0 1em 1em 1em;
