@@ -34,8 +34,8 @@
                         <button type="submit">LOGIN</button>
                     </form>
 
-                    <form action="?page=registration" method="get">
-                        <button type="submit">REGISTER</button>
+                    <form action="" method="get">
+                        <button type="submit" name="page" value="register">REGISTER</button>
                     </form>
                 </div>
             </div>
@@ -43,30 +43,3 @@
     </body>
 </html>
 
-
-
-<!--            <div class="row justify-content-center align-items-center text-center">
-                <div class="logo col-12 col-md-6">
-                    <img class="img-fluid" src="Public/img/leaf_01.png">
-                </div>
-                <div class="content col-12 col-md-6">
-                    <h1>TEABUDS</h1>
-                    <form action="?page=login" method="post">
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
-                            <div class="valid-feedback">Valid.</div>
-                            <div class="invalid-feedback">Please fill out this field.</div>
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
-                            <div class="valid-feedback">Valid.</div>
-                            <div class="invalid-feedback">Please fill out this field.</div>
-                        </div>
-                        <button type="submit" class="login btn btn-primary">LOGIN</button>
-                    </form>
-                    <form action="?page=register" class="register-group">
-                        <p>Don't have an account yet?</p>
-                        <button type="submit" class="register btn btn-primary">REGISTER</button>
-                    </form>
-                </div>
-            </div>-->

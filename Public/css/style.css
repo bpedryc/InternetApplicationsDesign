@@ -16,8 +16,8 @@ body {
 
 .container {
     height: inherit;
-    max-width: unset;
-    margin: 0;
+    max-width: 1460px;
+    margin: 0 auto;
     justify-content: center;
     align-items: center;
 }

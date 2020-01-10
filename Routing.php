@@ -15,10 +15,6 @@ class Routing
                 'controller' => 'SecurityController',
                 'action' => 'login'
             ],
-            'registration' => [
-                'controller' => 'RegistrationController',
-                'action' => 'getRegistrationForm'
-            ],
             'register' => [
                 'controller' => 'RegistrationController',
                 'action' => 'register'
@@ -39,6 +35,7 @@ class Routing
             $action = $this->routes[$page]['action'];
 
             $object = new $controller;
+
             $object->$action();
         }
     }

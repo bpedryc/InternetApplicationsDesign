@@ -12,7 +12,7 @@
     <title>Teabuds</title>
 </head>
 <body>
-
+    <?php include 'navbar.php'; ?>
     <div class="container">
         <div class="messages">
             <?php
