@@ -1,5 +1,20 @@
+html {
+    background: linear-gradient(35deg, #03200A, #22914B) no-repeat fixed;
+}
+
+.login {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
 img {
     display: block;
+    margin: auto;
+}
+
+.row {
+    width: 100%;
     margin: auto;
 }
 
@@ -50,7 +65,17 @@ input {
 }
 
 @media (max-width: 767px) {
+
+    input {
+        font-size: 0.8em;
+    }
+
     .forms > h1 {
         font-size: 2em;
+    }
+    .logo > img {
+        width: 45%;
+        min-width: 180px;
+        margin-bottom: 2em;
     }
 }

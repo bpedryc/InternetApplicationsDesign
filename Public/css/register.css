@@ -1,3 +1,7 @@
+html {
+    background: linear-gradient(35deg, #03200A, #22914B) no-repeat fixed;
+}
+
 body {
     color: white;
 }

@@ -23,7 +23,15 @@ class SecurityController extends BaseController
                 $this->render('login', ['messages' => ['Wrong password!']]);
                 return;
             }
-            $this->render('profile', ['messages' => [$user->getFirstName(), $user->getLastName()]]);
+
+            $_SESSION["id"] = $user->getEmail();
+            $_SESSION["role"] = $user->getRole();
+
+
+            $url ="http://$_SERVER[HTTP_HOST]/projects/PAI2019/";
+            header("Location: {$url}?page=profile");
+            $this->render('profile', ['user' => $user, 'messages' => [$user->getFirstName(), $user->getLastName()]]);
+            return;
         }
 
         $this->render('login');
@@ -33,5 +41,7 @@ class SecurityController extends BaseController
     {
         session_unset();
         session_destroy();
+
+        $this->render('login', ['messages' => ['You have been successfully logged out!']]);
     }
 }

@@ -1,5 +1,5 @@
 html {
-    background: linear-gradient(35deg, #03200A, #22914B) no-repeat fixed;
+    background: linear-gradient(180deg, #093220, #0d5137) no-repeat fixed;
 }
 
 body {
@@ -15,11 +15,8 @@ body {
 }
 
 .container {
-    height: inherit;
-    max-width: 1460px;
+    max-width: 1250px;
     margin: 0 auto;
-    justify-content: center;
-    align-items: center;
 }
 
 form {
@@ -50,4 +47,51 @@ button:hover {
 button:focus {
     background-color: #01572F;
     outline: none;
+}
+
+.fa-shopping-bag {
+    vertical-align: middle;
+    font-size: 20px;
+}
+
+.navbar {
+    font-size: 1.1em;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar-brand {
+    font-size: 1.4em;
+}
+
+.navbar-secondary {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.navbar-primary {
+    padding: .3rem 0;
+    width: 100%;
+    background: #239159 no-repeat;
+}
+
+.navbar-primary > .navbar-expand .navbar-nav .nav-link {
+    color: white;
+}
+
+@media (max-width: 767px) {
+    .container {
+        max-width: 90%;
+    }
+    .nav-item {
+        font-size: 0.8em !important;
+    }
+    .navbar-brand {
+        font-size: 1.2em;
+    }
+    .navbar-secondary {
+        padding-top: .4em;
+        padding-bottom: .4em;
+    }
 }

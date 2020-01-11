@@ -1,0 +1,83 @@
+body {
+    color: white;
+}
+
+.heading {
+    margin-top: 0.5em;
+    /*background: #00482b no-repeat;*/
+    /*background: linear-gradient(180deg, #093220, #0d5137) no-repeat;*/
+}
+
+.profile-avatar {
+    text-align: center;
+    padding-top: 0.2rem;
+    padding-bottom: 0.8rem;
+}
+
+.profile-avatar > img {
+    box-shadow: 0 0 5px rgba(0,29,41,.5)
+}
+
+.profile-info {
+    text-align: center;
+}
+
+.profile-name {
+    font-size: 1.4em;
+    font-weight: 400;
+    margin-bottom: 0.1em;
+}
+
+.profile-stats {
+    margin-bottom: 0.6em;
+}
+
+.profile-stats > .col > p {
+    margin-bottom: 0.1em;
+}
+
+.profile-desc {
+    margin: 0 auto;
+    width: 50%
+}
+
+.collection {
+    padding-top: 0.8em;
+}
+
+.collection-item {
+    background: #036a4d;
+    box-shadow: 0 0 5px rgba(0,29,41,.3);
+    padding: 0 1em 0.8em 1em;
+    border-radius: 40px;
+
+    /*color: white;*/
+    text-align: center;
+    font-weight: 400;
+}
+
+.collection-item-name {
+    font-weight: 500;
+    font-size: 1.2em;
+    line-height: 1.05em;
+}
+
+@media (max-width: 991px) {
+    .collection-item > img {
+        width: 70%;
+    }
+}
+
+@media (max-width: 767px) {
+    .profile-desc {
+        width: 90%;
+    }
+}
+
+@media (max-width: 575px) {
+    .collection-item > img {
+        width: 100%;
+    }
+}
+
+

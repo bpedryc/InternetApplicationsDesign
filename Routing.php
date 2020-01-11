@@ -15,6 +15,10 @@ class Routing
                 'controller' => 'SecurityController',
                 'action' => 'login'
             ],
+            'logout' => [
+                'controller' => 'SecurityController',
+                'action' => 'logout'
+            ],
             'register' => [
                 'controller' => 'RegistrationController',
                 'action' => 'register'
@@ -31,6 +35,7 @@ class Routing
         $page = isset($_GET['page']) ? $_GET['page'] : 'login';
 
         if (isset($this->routes[$page])){
+
             $controller = $this->routes[$page]['controller'];
             $action = $this->routes[$page]['action'];
 
