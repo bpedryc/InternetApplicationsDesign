@@ -12,6 +12,7 @@ body {
     padding: 0;
     font-family: 'Roboto', serif;
     background-color: transparent;
+    color: white;
 }
 
 .container {
@@ -25,8 +26,7 @@ form {
     justify-content: center;
 }
 
-
-button {
+.button-rounded {
     margin: 0 1em 1em 1em;
     color: white;
     background: #017840 0 0 no-repeat padding-box;
@@ -38,13 +38,13 @@ button {
     line-height: 2.5em;
 }
 
-button:hover {
+.button-rounded:hover {
     background-color: #1a7c45;
     color: white;
     text-decoration: none;
 }
 
-button:focus {
+.button-rounded:focus {
     background-color: #01572F;
     outline: none;
 }
@@ -78,6 +78,10 @@ button:focus {
 
 .navbar-primary > .navbar-expand .navbar-nav .nav-link {
     color: white;
+}
+
+.heading {
+    margin-top: 0.5em;
 }
 
 @media (max-width: 767px) {

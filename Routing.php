@@ -1,9 +1,5 @@
 <?php
 
-require_once 'Controllers/SecurityController.php';
-require_once 'Controllers/RegistrationController.php';
-require_once 'Controllers/ProfileController.php';
-
 class Routing
 {
     private $routes = [];
@@ -26,6 +22,10 @@ class Routing
             'profile' => [
                 'controller' => 'ProfileController',
                 'action' => 'getProfileInfo'
+            ],
+            'shops' => [
+                'controller' => 'ShopsController',
+                'action' => 'getAvailableShops'
             ]
         ];
     }

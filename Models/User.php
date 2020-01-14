@@ -6,6 +6,8 @@ class User {
     private $password;
     private $firstName;
     private $lastName;
+    private $birthDate;
+    private $addressId;
     private $role = ['ROLE_USER'];
 
     public function __construct(
@@ -13,12 +15,16 @@ class User {
         string $password,
         string $firstName,
         string $lastName,
+        string $birthDate,
+        int $addressId,
         int $id = null
     ) {
         $this->email = $email;
         $this->password = $password;
         $this->firstName = $firstName;
         $this->lastName = $lastName;
+        $this->birthDate = $birthDate;
+        $this->addressId = $addressId;
         $this->id = $id;
     }
 
@@ -50,5 +56,15 @@ class User {
     public function getLastName(): string
     {
         return $this->lastName;
+    }
+
+    public function getBirthDate(): string
+    {
+        return $this->birthDate;
+    }
+
+    public function getAddressId(): int
+    {
+        return $this->addressId;
     }
 }

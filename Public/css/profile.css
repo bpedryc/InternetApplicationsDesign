@@ -2,12 +2,6 @@ body {
     color: white;
 }
 
-.heading {
-    margin-top: 0.5em;
-    /*background: #00482b no-repeat;*/
-    /*background: linear-gradient(180deg, #093220, #0d5137) no-repeat;*/
-}
-
 .profile-avatar {
     text-align: center;
     padding-top: 0.2rem;
@@ -50,10 +44,20 @@ body {
     box-shadow: 0 0 5px rgba(0,29,41,.3);
     padding: 0 1em 0.8em 1em;
     border-radius: 40px;
+    outline: none;
+    border: none;
 
-    /*color: white;*/
     text-align: center;
     font-weight: 400;
+    color: inherit;
+}
+
+button.collection-item:hover {
+    filter: brightness(0.9);
+}
+
+button.collection-item:focus {
+    outline: none;
 }
 
 .collection-item-name {

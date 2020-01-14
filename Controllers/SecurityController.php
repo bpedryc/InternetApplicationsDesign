@@ -1,8 +1,5 @@
 <?php
 
-require_once 'BaseController.php';
-require_once 'Repository/UserRepository.php';
-
 class SecurityController extends BaseController
 {
     public function login()
@@ -30,7 +27,7 @@ class SecurityController extends BaseController
 
             $url ="http://$_SERVER[HTTP_HOST]/projects/PAI2019/";
             header("Location: {$url}?page=profile");
-            $this->render('profile', ['user' => $user, 'messages' => [$user->getFirstName(), $user->getLastName()]]);
+            $this->render('profile');
             return;
         }
 

@@ -1,0 +1,48 @@
+.shop-wrapper {
+    padding-left: 3em;
+    padding-right: 3em;
+}
+
+button.shop {
+    display: inline-flex; /* keep the inline nature of buttons */
+    align-items: flex-start; /* this is default */;
+    flex-direction: column;
+
+    height: 100%;
+    background: #036a4d;
+    box-shadow: 0 0 5px rgba(0,29,41,.3);
+    padding: 1em 0 0 0;
+
+    font-weight: 400;
+    text-align: left;
+
+    border: none;
+    color: inherit;
+}
+
+button.shop:hover {
+    filter: brightness(0.9);
+}
+
+button.shop:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.shop-name {
+    margin-left: 0.5em;
+    margin-bottom: 0;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.shop-address {
+    margin-left: 0.8em;
+    margin-bottom: 1em;
+    color: #88FF90;
+    font-size: 0.8em;
+}
+
+.shop-photo {
+
+}

@@ -1,6 +1,6 @@
 <?php
 
-include_once 'Routing.php';
+include 'loader.php';
 
 $routing = new Routing();
 $routing->run();
