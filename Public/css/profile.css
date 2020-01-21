@@ -65,6 +65,10 @@ button.collection-item:focus {
     outline: none;
 }
 
+.collection-item-wrapper {
+    margin-bottom: 2em;
+}
+
 .collection-item-name {
     font-weight: 500;
     font-size: 1.2em;
@@ -117,17 +121,29 @@ button.collection-item:focus {
     .collection-item > img {
         width: 70%;
     }
+
+    .add-tea-form{
+        width:50%;
+    }
 }
 
 @media (max-width: 767px) {
     .profile-desc {
         width: 90%;
     }
+
+    .add-tea-form{
+        width:70%;
+    }
 }
 
 @media (max-width: 575px) {
     .collection-item > img {
         width: 100%;
+    }
+
+    .add-tea-form{
+        width:90%;
     }
 }
 

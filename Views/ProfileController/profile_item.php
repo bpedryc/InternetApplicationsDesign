@@ -13,9 +13,10 @@
 </script>
 
 <script class="collection-new-item-template" type="text/x-custom-template">
-    <div class="button-add-tea col col-6 col-md-4 col-lg-2">
-        <button class="col col-12 collection-item" onclick="newTea()" type="button">
-            <img class="img-fluid p-2" src="Public/img/function_addtea.png">
-        </button>
+    <div class="collection-item-wrapper col col-6 col-md-4 col-lg-2">
+            <button class="col col-12 collection-item" onclick="newTea()" type="button">
+                <img class="img-fluid p-2" src="Public/img/function_addtea.png">
+            </button>
+        </div>
     </div>
 </script>
