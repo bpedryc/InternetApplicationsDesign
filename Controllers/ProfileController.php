@@ -7,6 +7,8 @@ class ProfileController extends BaseController
         $userRepository = new UserRepository();
         $user = $userRepository->getUser($_SESSION["email"]);
 
+
+
         $this->render('profile', ['user' => $user]);
     }
 

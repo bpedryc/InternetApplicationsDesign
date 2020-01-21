@@ -46,6 +46,18 @@ class Routing
             'get_collection_size' => [
                 'controller' => 'ProfileController',
                 'action' => 'getCollectionSize'
+            ],
+            'admin' => [
+                'controller' => 'AdminController',
+                'action' => 'accessAdminPanel'
+            ],
+            'products' => [
+                'controller' => 'ProductsController',
+                'action' => 'showProducts'
+            ],
+            'get_products' => [
+                'controller' => 'ProductsController',
+                'action' => 'getProducts'
             ]
         ];
     }

@@ -22,8 +22,16 @@ class SecurityController extends BaseController
             }
 
             $_SESSION["email"] = $user->getEmail();
-            $_SESSION["role"] = $user->getRole();
             $_SESSION["id"] = $user->getId();
+
+
+            $adminRepository = new AdminRepository();
+            $admin = $adminRepository->getAdmin($user->getId());
+            if ($admin != null) {
+                $_SESSION["role"] = 'admin';
+            } else {
+                $_SESSION["role"] = 'user';
+            }
 
 
             $url ="http://$_SERVER[HTTP_HOST]/projects/PAI2019/";

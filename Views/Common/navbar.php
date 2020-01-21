@@ -4,6 +4,17 @@
             <img src="Public/img/logo.png" width="40" height="40" class="d-none d-md-inline-block align-top" alt="">
             Teabuds
         </a>
+
+        <?php
+        if ($_SESSION['role'] === 'admin'){
+            $specialPage = '?page=admin';
+            $specialIcon = 'fas fa-cog';
+        } else {
+            $specialPage = '?page=logout';
+            $specialIcon = 'fas fa-shopping-bag';
+        }
+        ?>
+
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
                 <a class="nav-link" href="?page=logout">
@@ -11,8 +22,8 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="?page=logout">
-                    <i class="fas fa-shopping-bag"></i>
+                <a class="nav-link" href="<?=$specialPage?>">
+                    <i class="<?=$specialIcon?>"></i>
                 </a>
             </li>
         </ul>

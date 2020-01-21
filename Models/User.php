@@ -11,7 +11,6 @@ class User {
     private $followers;
     private $following;
     private $bio;
-    private $role = ['ROLE_USER'];
 
     public function __construct(
         string $email,
@@ -50,11 +49,6 @@ class User {
     public function getEmail(): string
     {
         return $this->email;
-    }
-
-    public function getRole(): array
-    {
-        return $this->role;
     }
 
     public function getFirstName(): string
