@@ -2,6 +2,10 @@ body {
     color: white;
 }
 
+.container {
+    position: relative;
+}
+
 .profile-avatar {
     text-align: center;
     padding-top: 0.2rem;
@@ -40,6 +44,7 @@ body {
 }
 
 .collection-item {
+    height: 11rem;
     background: #036a4d;
     box-shadow: 0 0 5px rgba(0,29,41,.3);
     padding: 0 1em 0.8em 1em;
@@ -64,6 +69,48 @@ button.collection-item:focus {
     font-weight: 500;
     font-size: 1.2em;
     line-height: 1.05em;
+}
+
+.add-tea-form {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2em;
+    visibility: hidden;
+
+    width:30%;
+    background-color: white;
+    border-radius: 1em;
+    z-index: 2;
+
+    color: black;
+}
+
+.cancel-button {
+    position: absolute;
+    top: -0.5rem;
+    right: -0.5rem;
+    border-radius: 100%;
+}
+
+.page-link {
+    background-color: #036a4d;
+    color: white;
+    border-color: transparent;
+}
+
+.page-link:focus {
+    box-shadow: 0 0 0 .2rem rgba(2, 72, 51, 0.25)
+}
+
+.page-link:hover {
+    color: #024833;
+}
+
+.page-item.disabled > .page-link{
+    background-color: #024833;
+    border-color: transparent;
 }
 
 @media (max-width: 991px) {

@@ -21,12 +21,17 @@ class Database
     {
         try {
             $conn = new PDO(
-                "mysql:host=$this->host;dbname=$this->database",
+                "mysql:host=$this->host;dbname=$this->database;charset=utf8mb4",
                 $this->username,
-                $this->password
+                $this->password,
+                array(
+                    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                    PDO::ATTR_PERSISTENT => false,
+                    PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8mb4 COLLATE utf8mb4_general_ci"
+                )
             );
 
-            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            //$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $conn;
         }
         catch(PDOException $e){

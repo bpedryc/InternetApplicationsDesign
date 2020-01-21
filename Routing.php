@@ -26,6 +26,26 @@ class Routing
             'shops' => [
                 'controller' => 'ShopsController',
                 'action' => 'getAvailableShops'
+            ],
+            'get_collection' => [
+                'controller' => 'ProfileController',
+                'action' => 'getCollection'
+            ],
+            'tea' => [
+                'controller' => 'TeaController',
+                'action' => 'getTea'
+            ],
+            'add_tea' => [
+                'controller' => 'ProfileController',
+                'action' => 'addTea'
+            ],
+            'delete_tea' => [
+                'controller' => 'TeaController',
+                'action' => 'deleteTea'
+            ],
+            'get_collection_size' => [
+                'controller' => 'ProfileController',
+                'action' => 'getCollectionSize'
             ]
         ];
     }

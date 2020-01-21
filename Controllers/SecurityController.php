@@ -16,13 +16,14 @@ class SecurityController extends BaseController
                 $this->render('login', ['messages' => ['An account with this email address doesn\'t exist!']]);
                 return;
             }
-            if ($password != $user->getPassword()){
+            if (md5($password) != $user->getPassword()){
                 $this->render('login', ['messages' => ['Wrong password!']]);
                 return;
             }
 
-            $_SESSION["id"] = $user->getEmail();
+            $_SESSION["email"] = $user->getEmail();
             $_SESSION["role"] = $user->getRole();
+            $_SESSION["id"] = $user->getId();
 
 
             $url ="http://$_SERVER[HTTP_HOST]/projects/PAI2019/";

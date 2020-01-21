@@ -1,0 +1,42 @@
+.rating {
+    margin-top: 1em;
+    margin-left: 8em;
+    margin-right: 8em;
+    margin-bottom: 3em;
+}
+
+.fa-star {
+    width: 20%;
+    font-size: 3em;
+    text-align: center;
+}
+
+.progress {
+    margin-left: 3em;
+    margin-right: 3em;
+    margin-bottom: 2em;
+    height: 2.2em;
+    font-size: 0.9em;
+}
+
+.progress-bar {
+    text-align: left;
+    padding-left: 1.5em;
+    color: black;
+}
+
+.notes {
+    margin-top: 3em;
+}
+
+.tea-img {
+    margin-left:auto;
+    margin-right: auto;
+    margin-bottom: 3em;
+    width: 60%;
+}
+
+.btn-danger {
+    width:70%;
+    margin:auto;
+}

@@ -8,6 +8,9 @@ class User {
     private $lastName;
     private $birthDate;
     private $addressId;
+    private $followers;
+    private $following;
+    private $bio;
     private $role = ['ROLE_USER'];
 
     public function __construct(
@@ -17,6 +20,9 @@ class User {
         string $lastName,
         string $birthDate,
         int $addressId,
+        int $followers = null,
+        int $following = null,
+        string $bio = null,
         int $id = null
     ) {
         $this->email = $email;
@@ -25,6 +31,9 @@ class User {
         $this->lastName = $lastName;
         $this->birthDate = $birthDate;
         $this->addressId = $addressId;
+        $this->followers = $followers;
+        $this->following = $following;
+        $this->bio = $bio;
         $this->id = $id;
     }
 
@@ -66,5 +75,20 @@ class User {
     public function getAddressId(): int
     {
         return $this->addressId;
+    }
+
+    public function getFollowers(): int
+    {
+        return $this->followers;
+    }
+
+    public function getFollowing(): int
+    {
+        return $this->following;
+    }
+
+    public function getBio(): string
+    {
+        return $this->bio;
     }
 }

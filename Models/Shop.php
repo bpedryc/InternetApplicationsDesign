@@ -5,17 +5,17 @@ class Shop
 {
     private $id;
     private $name;
-    private $address;
+    private $addressId;
     private $photo;
 
     public function __construct(
         string $name,
-        string $address,
+        int $addressId,
         string $photo,
         int $id = null
     ){
         $this->name = $name;
-        $this->address = $address;
+        $this->addressId = $addressId;
         $this->photo = $photo;
         $this->id = $id;
     }
@@ -25,9 +25,9 @@ class Shop
         return $this->name;
     }
 
-    public function getAddress(): string
+    public function getAddressId(): int
     {
-        return $this->address;
+        return $this->addressId;
     }
 
     public function getPhoto(): string

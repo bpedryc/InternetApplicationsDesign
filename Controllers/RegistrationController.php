@@ -13,14 +13,13 @@ class RegistrationController extends BaseController
             $lastName = $name[1];
 
             $email = $_POST['email'];
-            $password = $_POST['password'];
+            $password = md5($_POST['password']);
             $birthDate = $_POST['birthDate'];
             $country = $_POST['country'];
             $state = $_POST['state'];
             $city = $_POST['city'];
             $street = $_POST['street'];
 
-            //start: I should make a transaction out of this
             $addressRepository = new AddressRepository();
             $addressId = $addressRepository->insertAddress(
                 new Address($country, $state, $city, $street)
@@ -30,7 +29,6 @@ class RegistrationController extends BaseController
             $userRepository->insertUser(
                 new User($email, $password, $firstName, $lastName, $birthDate, $addressId)
             );
-            //end
 
             $url ="http://$_SERVER[HTTP_HOST]/projects/PAI2019/";
             header("Location: {$url}?page=login");

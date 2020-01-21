@@ -3,11 +3,12 @@
 <head>
     <?php include __DIR__.'/../Common/head.php' ?>
     <link rel="stylesheet" href="Public/css/register.css" />
+    <script src="Public/js/register.js"></script>
 </head>
 
 <body>
     <div class="container">
-        <form action="?page=register" method="post">
+        <form id="register-form" action="?page=register" method="post">
             <div class="row">
                 <h1 class="col-12 col-md-5 col-lg-4 offset-md-1 offset-lg-2">Create an Account</h1>
             </div>
@@ -26,54 +27,54 @@
 
                 <div class="col-sm-12 col-md-5 col-lg-4 offset-md-1 offset-lg-2">
                     <div class="form-group">
-                        <label for="inputName">Full Name</label>
-                        <input name="name" type="text" class="form-control" id="inputName">
+                        <label for="name">Full Name</label>
+                        <input name="name" type="text" class="form-control" id="name">
                     </div>
                     <div class="form-group">
-                        <label for="inputEmail">Email</label>
-                        <input name="email" type="email" class="form-control" id="inputEmail">
+                        <label for="email">Email</label>
+                        <input name="email" type="email" class="form-control" id="email">
                     </div>
                     <div class="form-group">
-                        <label for="inputPassword">Password</label>
-                        <input name="password" type="password" class="form-control" id="inputPassword">
+                        <label for="password">Password</label>
+                        <input name="password" type="password" class="form-control" id="password">
                     </div>
                     <div class="form-group">
-                        <label for="inputPasswordVerify">Repeat Password</label>
-                        <input type="password" class="form-control" id="inputPasswordVerify">
+                        <label for="password-verify">Repeat Password</label>
+                        <input type="password" class="form-control" id="password-verify">
                     </div>
                     <div class="form-group">
-                        <label for="">Favourite Tea</label>
-                        <input name="favTea" type="text" class="form-control" id="">
+                        <label for="fav-tea">Favourite Tea</label>
+                        <input name="favTea" type="text" class="form-control" id="fav-tea">
                     </div>
                 </div>
 
                 <div class="col-sm-12 col-md-5 col-lg-4">
                     <div class="form-group">
-                        <label for="">Date of Birth</label>
-                        <input name="birthDate" type="date" class="form-control" id="">
+                        <label for="birth-date">Date of Birth</label>
+                        <input name="birthDate" type="date" class="form-control" id="birth-date">
                     </div>
                     <div class="form-group">
-                        <label for="">Country/Region</label>
-                        <input name="country" type="text" class="form-control" id="">
+                        <label for="country">Country/Region</label>
+                        <input name="country" type="text" class="form-control" id="country">
                     </div>
                     <div class="form-group">
-                        <label for="">State</label>
-                        <input name="state" type="text" class="form-control" id="">
+                        <label for="state">State</label>
+                        <input name="state" type="text" class="form-control" id="state">
                     </div>
                     <div class="form-group">
-                        <label for="">City</label>
-                        <input name="city" type="text" class="form-control" id="">
+                        <label for="city">City</label>
+                        <input name="city" type="text" class="form-control" id="city">
                     </div>
                     <div class="form-group">
-                        <label for="">Street</label>
-                        <input name="street" type="text" class="form-control" id="">
+                        <label for="street">Street</label>
+                        <input name="street" type="text" class="form-control" id="street">
                     </div>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-6 col-md-6 offset-3 offset-md-3 text-center">
-                    <button class="register-button button-rounded" type="submit">REGISTER</button>
+                    <button class="register-button button-rounded" type="button" onclick="validateRegister()">REGISTER</button>
                 </div>
             </div>
         </form>

@@ -10,15 +10,15 @@ class ShopRepository extends Repository
         ");
         $statement->execute();
 
-        $shops_raw = $statement->fetchAll(PDO::FETCH_ASSOC);
+        $shops_serialized = $statement->fetchAll(PDO::FETCH_ASSOC);
 
         $shops = array();
-        foreach ($shops_raw as $shop_raw){
+        foreach ($shops_serialized as $shop_serialized){
             $shop = new Shop(
-                $shop_raw['Name'],
-                $shop_raw['Address'],
-                $shop_raw['Photo'],
-                $shop_raw['Id']
+                $shop_serialized['Name'],
+                $shop_serialized['AddressId'],
+                $shop_serialized['Photo'],
+                $shop_serialized['Id']
             );
             array_push($shops, $shop);
         }
