@@ -14,12 +14,17 @@ class AdminController extends BaseController
     }
 
     public function isAdmin(){
-        $adminRepository = new AdminRepository(Database::establishConnection());
+
+        if($_SESSION['role'] == 'admin'){
+            return true;
+        }
+        return false;
+        /*$adminRepository = new AdminRepository(Database::establishConnection());
         $admin = $adminRepository->getAdmin($_SESSION['id']);
         if ($admin == null){
             return false;
         }
-        return true;
+        return true;*/
     }
 
     public function getUsers(){
