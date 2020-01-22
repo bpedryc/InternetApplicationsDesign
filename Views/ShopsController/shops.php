@@ -13,8 +13,8 @@
             <p>Shops</p>
             <p class="text-center pt-3 pb-4">Choose the shop you want to order from</p>
         </div>
-        <div class="container row">
-            <?php include __DIR__.'/shops_singleshop,php' ?>
+        <div class="pagination-container container row" data-id="shops">
+            <?php include __DIR__.'/shops_singleshop.php' ?>
 
 
             <?php

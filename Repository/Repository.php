@@ -2,10 +2,10 @@
 
 class Repository
 {
-    protected $database;
+    protected $connection;
 
-    public function __construct()
+    public function __construct(PDO $dbConnection)
     {
-        $this->database = new Database();
+        $this->connection = $dbConnection;
     }
 }

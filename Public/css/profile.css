@@ -69,6 +69,10 @@ button.collection-item:focus {
     margin-bottom: 2em;
 }
 
+.collection-item-wrapper > form {
+    height: 100%;
+}
+
 .collection-item-name {
     font-weight: 500;
     font-size: 1.2em;
@@ -78,30 +82,6 @@ button.collection-item:focus {
 .modal-content {
     color: black;
 }
-/*.add-tea-form {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    padding: 2em;
-    visibility: hidden;
-
-    width:30%;
-    background-color: white;
-    border-radius: 1em;
-    z-index: 2;
-
-    color: black;
-}*/
-
-/*
-.cancel-button {
-    position: absolute;
-    top: -0.5rem;
-    right: -0.5rem;
-    border-radius: 100%;
-}
-*/
 
 .page-link {
     background-color: #036a4d;
@@ -126,30 +106,18 @@ button.collection-item:focus {
     .collection-item > img {
         width: 70%;
     }
-
-    /*.add-tea-form{
-        width:50%;
-    }*/
 }
 
 @media (max-width: 767px) {
     .profile-desc {
         width: 90%;
     }
-
-    /*.add-tea-form{
-        width:70%;
-    }*/
 }
 
 @media (max-width: 575px) {
     .collection-item > img {
         width: 100%;
     }
-
-    /*.add-tea-form{
-        width:90%;
-    }*/
 }
 
 

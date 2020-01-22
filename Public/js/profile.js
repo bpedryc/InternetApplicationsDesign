@@ -94,24 +94,24 @@ function getCollectionPage(page){
 }
 
 function newTea(){
-    $('.add-tea-form').css('visibility', 'visible');
+    $('#tea-modal').css('visibility', 'visible');
 }
 
-function cancelNewTea(){
-    let form = $('.add-tea-form');
-    $(form).css('visibility', 'hidden');
+function hideTeaModal(){
+    let modal = $('#tea-modal');
+    $(modal).modal('hide');
 
-    $(form).find('#tea-name').val('');
-    $(form).find('#tea-type').val('Black Tea');
-    $(form).find('#tea-temperature').val('0');
-    $(form).find('#tea-time-minutes').val('');
-    $(form).find('#tea-time-seconds').val('');
-    $(form).find('#tea-proportions').val('');
-    $(form).find('#tea-notes').val('');
+    $(modal).find('#tea-name').val('');
+    $(modal).find('#tea-type').val('Black Tea');
+    $(modal).find('#tea-temperature').val('0');
+    $(modal).find('#tea-time-minutes').val('');
+    $(modal).find('#tea-time-seconds').val('');
+    $(modal).find('#tea-proportions').val('');
+    $(modal).find('#tea-notes').val('');
 }
 
 function addTea(){
-    let form = $('.add-tea-form');
+    let form = $('#tea-modal');
 
     let name = $(form).find('#tea-name').val();
     let type = $(form).find('#tea-type').val();
@@ -131,7 +131,7 @@ function addTea(){
         type: 'GET',
         data: tea,
         success: function(){
-            cancelNewTea();
+            hideTeaModal();
             displayCollectionPage(currentPage);
         }
     })

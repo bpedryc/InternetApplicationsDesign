@@ -2,9 +2,14 @@
 
 class UserRepository extends Repository
 {
+    public function __construct(PDO $dbConnection)
+    {
+        parent::__construct($dbConnection);
+    }
+
     public function getUser(string $email): ?User
     {
-        $statement = $this->database->connect()->prepare("
+        $statement = $this->connection->prepare("
             SELECT * FROM Users WHERE email = :email
         ");
 
@@ -34,8 +39,7 @@ class UserRepository extends Repository
 
     public function insertUser(User $user) : int
     {
-        $connection = $this->database->connect();
-        $statement = $connection->prepare("
+        $statement = $this->connection->prepare("
             INSERT INTO Users (Email, Password, FirstName, LastName, BirthDate, AddressId)
             VALUES (:email, :password, :firstName, :lastName, :birthDate, :addressId)
         ");
@@ -49,6 +53,29 @@ class UserRepository extends Repository
             'addressId' => $user->getAddressId(),
         ]);
 
-        return $connection->lastInsertId();
+        return $this->connection->lastInsertId();
+    }
+
+    public function getAllUsers() : array
+    {
+        $statement = $this->connection->prepare("
+            SELECT * FROM Users
+        ");
+
+        $statement->execute();
+
+        $users_serialized = $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $users_serialized;
+    }
+
+    public function deleteUser(int $userId)
+    {
+        $statement = $this->connection->prepare("
+            DELETE FROM Users WHERE Id = :userId
+        ");
+
+        $statement->execute([
+            'userId' => $userId
+        ]);
     }
 }

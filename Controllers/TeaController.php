@@ -8,7 +8,7 @@ class TeaController extends BaseController
             return;
         }
 
-        $teaRepository = new TeaRepository();
+        $teaRepository = new TeaRepository(Database::establishConnection());
         $tea_serialized = $teaRepository->getTea($_GET['teaId']);
         $tea = Tea::deserialize($tea_serialized);
 
@@ -21,7 +21,7 @@ class TeaController extends BaseController
             return;
         }
 
-        $teaRepository = new TeaRepository();
+        $teaRepository = new TeaRepository(Database::establishConnection());
         $teaRepository->removeTea($_GET['teaId']);
 
         $url ="http://$_SERVER[HTTP_HOST]/projects/PAI2019/";

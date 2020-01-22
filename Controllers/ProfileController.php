@@ -4,16 +4,14 @@ class ProfileController extends BaseController
 {
 
     public function getProfileInfo(){
-        $userRepository = new UserRepository();
+        $userRepository = new UserRepository(Database::establishConnection());
         $user = $userRepository->getUser($_SESSION["email"]);
-
-
 
         $this->render('profile', ['user' => $user]);
     }
 
     public function getCollection(){
-        $teaRepository = new TeaRepository();
+        $teaRepository = new TeaRepository(Database::establishConnection());
         $teas = $teaRepository->getTeas($_SESSION['id'], $_GET['pagenr']);
 
         header('Content-type: application/json');
@@ -33,12 +31,12 @@ class ProfileController extends BaseController
             $_GET['UserId']
         );
 
-        $teaRepository = new TeaRepository();
+        $teaRepository = new TeaRepository(Database::establishConnection());
         $teaRepository->insertTea($tea);
     }
 
     public function getCollectionSize(){
-        $teaRepository = new TeaRepository();
+        $teaRepository = new TeaRepository(Database::establishConnection());
         $collectionSize = $teaRepository->getTeaCount($_SESSION['id']);
 
         header('Content-type: application/json');

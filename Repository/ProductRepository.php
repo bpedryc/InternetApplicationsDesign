@@ -2,8 +2,13 @@
 
 class ProductRepository extends Repository
 {
+    public function __construct(PDO $dbConnection)
+    {
+        parent::__construct($dbConnection);
+    }
+
     public function getProducts($shopId){
-        $statement = $this->database->connect()->prepare("
+        $statement = $this->connection->prepare("
             SELECT * FROM Products WHERE ShopId = :shopId
         ");
 

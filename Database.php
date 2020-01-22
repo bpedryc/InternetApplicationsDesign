@@ -17,6 +17,12 @@ class Database
         $this->database = DATABASE;
     }
 
+    public static function establishConnection() : PDO
+    {
+        $database = new self();
+        return $database->connect();
+    }
+
     public function connect()
     {
         try {

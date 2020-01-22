@@ -3,6 +3,11 @@
 
 class TeaRepository extends Repository
 {
+    public function __construct(PDO $dbConnection)
+    {
+        parent::__construct($dbConnection);
+    }
+
     /*public function getAllTeas() : array
     {
         $connection = $this->database->connect();
@@ -18,7 +23,7 @@ class TeaRepository extends Repository
 
     public function getTeaCount($userId) : int
     {
-        $statement = $this->database->connect()->prepare('
+        $statement = $this->connection->prepare('
             SELECT COUNT(*) As "TeaCount" FROM Teas WHERE UserId = :userId
         ');
 
@@ -32,8 +37,7 @@ class TeaRepository extends Repository
 
     public function getTea(int $teaId)
     {
-        $connection = $this->database->connect();
-        $statement = $connection->prepare("
+        $statement = $this->connection->prepare("
             SELECT * FROM Teas WHERE Teas.Id = :Id
         ");
 
@@ -48,10 +52,9 @@ class TeaRepository extends Repository
 
     public function getTeas(int $userId, int $pagenr) : array
     {
-        $connection = $this->database->connect();
         $offset = ($pagenr-1) * 6;
 
-        $statement = $connection->prepare("
+        $statement = $this->connection->prepare("
             SELECT * FROM Teas WHERE UserId = :userId LIMIT 6 OFFSET $offset
         ");
 
@@ -65,7 +68,7 @@ class TeaRepository extends Repository
     }
 
     public function insertTea(Tea $tea){
-        $statement = $this->database->connect()->prepare("
+        $statement = $this->connection->prepare("
             INSERT INTO Teas (Name, Type, LeafAmount, Temperature, SteepingTime, Notes, UserId)
             VALUES (:name, :type, :proportions, :temperature, :time, :notes, :userId)
         ");
@@ -82,7 +85,7 @@ class TeaRepository extends Repository
     }
 
     public function removeTea(int $teaId){
-        $statement = $this->database->connect()->prepare("
+        $statement = $this->connection->prepare("
            DELETE FROM Teas WHERE Id = :teaId 
         ");
 

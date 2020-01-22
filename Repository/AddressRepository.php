@@ -3,10 +3,14 @@
 
 class AddressRepository extends Repository
 {
+    public function __construct(PDO $dbConnection)
+    {
+        parent::__construct($dbConnection);
+    }
+
     public function insertAddress(Address $address) : int
     {
-        $connection = $this->database->connect();
-        $statement = $connection->prepare("
+        $statement = $this->connection->prepare("
             INSERT INTO Addresses (Country, State, City, Street)
             VALUES (:country, :state, :city, :street)
         ");
@@ -18,6 +22,6 @@ class AddressRepository extends Repository
             'street' => $address->getStreet()
         ]);
 
-        return $connection->lastInsertId();
+        return $this->connection->lastInsertId();
     }
 }

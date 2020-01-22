@@ -4,7 +4,7 @@ class SecurityController extends BaseController
 {
     public function login()
     {
-        $userRepository = new UserRepository();
+        $userRepository = new UserRepository(Database::establishConnection());
 
         if($this->isPost()){
             $email = $_POST['email'];
@@ -25,7 +25,7 @@ class SecurityController extends BaseController
             $_SESSION["id"] = $user->getId();
 
 
-            $adminRepository = new AdminRepository();
+            $adminRepository = new AdminRepository(Database::establishConnection());
             $admin = $adminRepository->getAdmin($user->getId());
             if ($admin != null) {
                 $_SESSION["role"] = 'admin';

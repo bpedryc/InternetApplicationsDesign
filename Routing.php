@@ -58,6 +58,14 @@ class Routing
             'get_products' => [
                 'controller' => 'ProductsController',
                 'action' => 'getProducts'
+            ],
+            'delete_user' => [
+                'controller' => 'AdminController',
+                'action' => 'deleteUser'
+            ],
+            'get_users' => [
+                'controller' => 'AdminController',
+                'action' => 'getUsers'
             ]
         ];
     }

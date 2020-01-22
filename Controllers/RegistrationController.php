@@ -20,15 +20,22 @@ class RegistrationController extends BaseController
             $city = $_POST['city'];
             $street = $_POST['street'];
 
-            $addressRepository = new AddressRepository();
-            $addressId = $addressRepository->insertAddress(
-                new Address($country, $state, $city, $street)
-            );
+            $dbConnection = Database::establishConnection();
+            try {
+                $dbConnection->beginTransaction();
 
-            $userRepository = new UserRepository();
-            $userRepository->insertUser(
-                new User($email, $password, $firstName, $lastName, $birthDate, $addressId)
-            );
+                $addressRepository = new AddressRepository($dbConnection);
+                $addressId = $addressRepository->insertAddress(
+                    new Address($country, $state, $city, $street)
+                );
+                $userRepository = new UserRepository($dbConnection);
+                $userRepository->insertUser(
+                    new User($email, $password, $firstName, $lastName, $birthDate, $addressId)
+                );
+                $dbConnection->commit();
+            } catch (Exception $e) {
+                $dbConnection->rollBack();
+            }
 
             $url ="http://$_SERVER[HTTP_HOST]/projects/PAI2019/";
             header("Location: {$url}?page=login");

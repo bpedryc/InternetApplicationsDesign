@@ -1,14 +1,10 @@
 <?php
 
-//in progress
 class AdminController extends BaseController
 {
     public function accessAdminPanel(){
 
-        $adminRepository = new AdminRepository();
-        $admin = $adminRepository->getAdmin($_SESSION['id']);
-
-        if ($admin == null){
+        if (!$this->isAdmin()){
             $url ="http://$_SERVER[HTTP_HOST]/projects/PAI2019/";
             header("Location: {$url}/?page=profile");
             return;
@@ -16,4 +12,43 @@ class AdminController extends BaseController
 
         $this->render('admin');
     }
+
+    public function isAdmin(){
+        $adminRepository = new AdminRepository(Database::establishConnection());
+        $admin = $adminRepository->getAdmin($_SESSION['id']);
+        if ($admin == null){
+            return false;
+        }
+        return true;
+    }
+
+    public function getUsers(){
+        if (!$this->isAdmin()){
+            http_response_code(403);
+            return;
+        }
+
+        $userRepository = new UserRepository(Database::establishConnection());
+        $users = $userRepository->getAllUsers();
+        header('Content-type: application/json');
+        http_response_code(200);
+        echo $users ? json_encode($users) : '';
+    }
+
+    public function deleteUser(){
+
+        if (!isset($_GET['userId'])){
+            http_response_code(404);
+            return;
+        }
+
+        if (!$this->isAdmin()){
+            http_response_code(403);
+            return;
+        }
+
+        $userRepository = new UserRepository(Database::establishConnection());
+        $userRepository->deleteUser($_GET['userId']);
+    }
+
 }

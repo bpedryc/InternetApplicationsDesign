@@ -2,8 +2,13 @@
 
 class AdminRepository extends Repository
 {
+    public function __construct(PDO $dbConnection)
+    {
+        parent::__construct($dbConnection);
+    }
+
     public function getAdmin($userId) {
-        $statement = $this->database->connect()->prepare("
+        $statement = $this->connection->prepare("
             SELECT * FROM Admins WHERE UserId = :userId 
         ");
 
