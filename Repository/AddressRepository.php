@@ -24,4 +24,22 @@ class AddressRepository extends Repository
 
         return $this->connection->lastInsertId();
     }
+
+    public function getAddress(int $addressId){
+        $statement = $this->connection->prepare("
+            SELECT * FROM Addresses WHERE Id = :addressId
+        ");
+
+        $statement->execute([
+            'addressId' => $addressId
+        ]);
+
+        $address = $statement->fetch(PDO::FETCH_ASSOC);
+        return new Address(
+            $address['Country'],
+            $address['State'],
+            $address['City'],
+            $address['Street']
+        );
+    }
 }

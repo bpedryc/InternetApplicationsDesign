@@ -10,7 +10,7 @@
             $specialPage = '?page=admin';
             $specialIcon = 'fas fa-cog';
         } else {
-            $specialPage = '?page=logout';
+            $specialPage = '';
             $specialIcon = 'fas fa-shopping-bag';
         }
         ?>

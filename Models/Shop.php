@@ -7,6 +7,7 @@ class Shop
     private $name;
     private $addressId;
     private $photo;
+    private $address = '';
 
     public function __construct(
         string $name,
@@ -33,5 +34,15 @@ class Shop
     public function getPhoto(): string
     {
         return $this->photo;
+    }
+
+    public function getAddress(): string
+    {
+        return $this->address;
+    }
+
+    public function setAddress(Address $address)
+    {
+        $this->address = $address->getStreet().", ".$address->getCity().", ".$address->getCountry() ;
     }
 }
