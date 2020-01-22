@@ -20,9 +20,6 @@ $(document).ready(function() {
 });
 
 function clearDuplicateTags(){
-    /*$('.collection-item-wrapper').each(function() {
-        $(this).remove();
-    });*/
     $('.collection').empty();
     $('#pagination-nav').empty();
 }
@@ -142,8 +139,8 @@ function addTea(){
 
 function verifyNewTea(tea){
     if (
-        tea.Name.length === 0 ||
-        tea.Type.length === 0 ||
+        tea.Name === undefined ||
+        tea.Type === undefined ||
         isNaN(tea.Temperature) ||
         isNaN(tea.SteepingTime) ||
         isNaN(tea.LeafAmount)

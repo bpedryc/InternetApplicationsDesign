@@ -75,7 +75,10 @@ button.collection-item:focus {
     line-height: 1.05em;
 }
 
-.add-tea-form {
+.modal-content {
+    color: black;
+}
+/*.add-tea-form {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -89,14 +92,16 @@ button.collection-item:focus {
     z-index: 2;
 
     color: black;
-}
+}*/
 
+/*
 .cancel-button {
     position: absolute;
     top: -0.5rem;
     right: -0.5rem;
     border-radius: 100%;
 }
+*/
 
 .page-link {
     background-color: #036a4d;
@@ -122,9 +127,9 @@ button.collection-item:focus {
         width: 70%;
     }
 
-    .add-tea-form{
+    /*.add-tea-form{
         width:50%;
-    }
+    }*/
 }
 
 @media (max-width: 767px) {
@@ -132,9 +137,9 @@ button.collection-item:focus {
         width: 90%;
     }
 
-    .add-tea-form{
+    /*.add-tea-form{
         width:70%;
-    }
+    }*/
 }
 
 @media (max-width: 575px) {
@@ -142,9 +147,9 @@ button.collection-item:focus {
         width: 100%;
     }
 
-    .add-tea-form{
+    /*.add-tea-form{
         width:90%;
-    }
+    }*/
 }
 
 
