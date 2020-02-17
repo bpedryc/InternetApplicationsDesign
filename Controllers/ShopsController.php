@@ -3,8 +3,6 @@
 
 class ShopsController extends BaseController
 {
-
-
     public function getAvailableShops(){
 
         $shopRepository = new ShopRepository(Database::establishConnection());

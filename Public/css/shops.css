@@ -4,8 +4,8 @@
 }
 
 button.shop {
-    display: inline-flex; /* keep the inline nature of buttons */
-    align-items: flex-start; /* this is default */;
+    display: inline-flex;
+    align-items: flex-start;
     flex-direction: column;
 
     height: 100%;

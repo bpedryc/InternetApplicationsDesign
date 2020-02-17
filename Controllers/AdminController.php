@@ -19,12 +19,6 @@ class AdminController extends BaseController
             return true;
         }
         return false;
-        /*$adminRepository = new AdminRepository(Database::establishConnection());
-        $admin = $adminRepository->getAdmin($_SESSION['id']);
-        if ($admin == null){
-            return false;
-        }
-        return true;*/
     }
 
     public function getUsers(){
